@@ -249,29 +249,6 @@ Every bug forced us to make the pipeline more robust instead of patching individ
 ---
 <div align="center">
 
-# 🛒 ACI
-## Agent Commerce Interface
-
-### **Making merchants AI-ready for autonomous shopping.**
-
-AI agents can browse.
-AI agents can reason.
-AI agents can plan.
-
-**But they still can't safely understand a merchant's website.**
-
-ACI is the trust layer that transforms merchant data into standardized, AI-readable commerce records.
-
-![Python](https://img.shields.io/badge/Python-3.11-blue?style=for-the-badge)
-![Streamlit](https://img.shields.io/badge/Streamlit-App-red?style=for-the-badge)
-![Razorpay](https://img.shields.io/badge/Razorpay-Test%20Mode-0066ff?style=for-the-badge)
-![Hackathon](https://img.shields.io/badge/Built%20For-Hackathon-purple?style=for-the-badge)
-
-</div>
-
----
-
----
 
 
 # 🚀 Getting Started
@@ -334,20 +311,6 @@ http://localhost:8501
 ```
 
 ---
-
-
----
-
----
-
-# 👩‍💻 Author
-
-**Nikitha MK**
-
-Built for a Hackathon 🚀
-
----
-
 # 📜 License
 
 This project was created for educational and hackathon purposes.
