@@ -186,35 +186,9 @@ Everything remains explainable.
 # 🏗 Architecture
 
 ```
-Merchant Catalog
-        │
-        ▼
-      Parser
-        │
-        ▼
-   Normalizer
-        │
-        ▼
-    Validator
-        │
-        ▼
- Readiness Score
-        │
-        ▼
-    ACI v1 JSON
-        │
-        ▼
- AI Shopping Agent
-        │
-        ▼
- Payment Gate
-(Budget • Stock • Consent)
-        │
-        ▼
- Razorpay Test Order
-        │
-        ▼
- Audit Trail
+<img width="480" height="315" alt="image" src="https://github.com/user-attachments/assets/dbf54dc4-689a-4f32-b1bb-41e0055c2b31" />
+
+
 ```
 
 ---
