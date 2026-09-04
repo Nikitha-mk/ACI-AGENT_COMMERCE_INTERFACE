@@ -185,16 +185,14 @@ Everything remains explainable.
 
 # 🏗 Architecture
 
-```
+
 <div align="center">
 
 <img src="https://github.com/user-attachments/assets/dbf54dc4-689a-4f32-b1bb-41e0055c2b31" width="900"/>
 
 </div>
 
-```
 
----
 
 # 🛠 Tech Stack
 
