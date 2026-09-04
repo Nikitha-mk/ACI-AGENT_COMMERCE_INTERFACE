@@ -183,7 +183,8 @@ Everything remains explainable.
 
 <div align="center">
 
-<img src="https://github.com/user-attachments/assets/dbf54dc4-689a-4f32-b1bb-41e0055c2b31" width="900"/>
+<img width="1536" height="1024" alt="WhatsApp Image 2026-09-04 at 9 55 17 PM" src="https://github.com/user-attachments/assets/31cc81ca-387b-424a-9834-58a935654e0f" />
+
 
 </div>
 
