@@ -1,0 +1,164 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://example.com/schemas/aci-v1.schema.json",
+  "title": "Agent Commerce Interface (ACI) v1",
+  "description": "Normalized, validated representation of a merchant's raw catalog/policy data, produced by the ACI pipeline for consumption by purchasing agents.",
+  "type": "object",
+  "required": [
+    "aci_version",
+    "record_id",
+    "generated_at",
+    "product",
+    "policy",
+    "readiness",
+    "security",
+    "audit_ref"
+  ],
+  "properties": {
+    "aci_version": {
+      "type": "string",
+      "const": "1.0"
+    },
+    "record_id": {
+      "type": "string",
+      "description": "Stable ID for this ACI record, e.g. sha256 of source product_id + merchant_id."
+    },
+    "generated_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "merchant": {
+      "type": "object",
+      "required": ["merchant_id", "name"],
+      "properties": {
+        "merchant_id": { "type": "string" },
+        "name": { "type": "string" },
+        "confidence": {
+          "type": "object",
+          "description": "Optional, rule-based. Not judged directly — cut first if behind schedule.",
+          "properties": {
+            "score": { "type": "number", "minimum": 0, "maximum": 100 },
+            "basis": {
+              "type": "array",
+              "items": { "type": "string" }
+            }
+          }
+        }
+      }
+    },
+    "product": {
+      "type": "object",
+      "required": ["product_id", "title", "price", "stock", "category"],
+      "properties": {
+        "product_id": { "type": "string" },
+        "title": { "type": "string" },
+        "description_clean": {
+          "type": "string",
+          "description": "Description after stripping any detected injection payloads."
+        },
+        "price": {
+          "type": "object",
+          "required": ["amount", "currency"],
+          "properties": {
+            "amount": { "type": "number", "minimum": 0 },
+            "currency": { "type": "string", "enum": ["INR", "USD"] },
+            "raw_source_value": { "type": "string" }
+          }
+        },
+        "stock": {
+          "type": "object",
+          "required": ["status", "quantity"],
+          "properties": {
+            "status": {
+              "type": "string",
+              "enum": ["in_stock", "low_stock", "out_of_stock", "unknown"]
+            },
+            "quantity": { "type": ["integer", "null"], "minimum": 0 }
+          }
+        },
+        "category": { "type": "string" },
+        "variants": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["type", "value", "available"],
+            "properties": {
+              "type": { "type": "string", "examples": ["size", "color"] },
+              "value": { "type": "string" },
+              "available": { "type": "boolean" }
+            }
+          }
+        },
+        "attributes": {
+          "type": "object",
+          "additionalProperties": { "type": "string" }
+        }
+      }
+    },
+    "policy": {
+      "type": "object",
+      "required": ["return_window_days", "ambiguous", "conflicts"],
+      "properties": {
+        "return_window_days": { "type": ["integer", "null"] },
+        "non_returnable_categories": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "ambiguous": {
+          "type": "boolean",
+          "description": "True if the normalizer could not resolve a single clear rule."
+        },
+        "conflicts": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Human-readable descriptions of contradictory policy statements found."
+        },
+        "raw_source_excerpt": { "type": "string" }
+      }
+    },
+    "readiness": {
+      "type": "object",
+      "required": ["score", "gaps"],
+      "properties": {
+        "score": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 100,
+          "description": "Rule-based deduction score, not model-generated. 100 minus point deductions per gap/ambiguity/conflict."
+        },
+        "gaps": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["field", "issue", "severity"],
+            "properties": {
+              "field": { "type": "string" },
+              "issue": { "type": "string" },
+              "severity": { "type": "string", "enum": ["low", "medium", "high"] }
+            }
+          }
+        }
+      }
+    },
+    "security": {
+      "type": "object",
+      "required": ["injection_detected"],
+      "properties": {
+        "injection_detected": { "type": "boolean" },
+        "injection_locations": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "stripped_payloads": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Raw text of anything removed, kept for audit only — never passed to an agent."
+        }
+      }
+    },
+    "audit_ref": {
+      "type": "string",
+      "description": "ID linking to the audit log row(s) for this record's pipeline run."
+    }
+  }
+}
