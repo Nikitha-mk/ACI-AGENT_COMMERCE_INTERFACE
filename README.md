@@ -79,11 +79,6 @@ Every merchant.
 
 ---
 
-# 🎬 Demo
-
-> **Merchant → ACI → AI Agent → Purchase**
-
-(Add GIF or Screenshot here)
 
 ---
 
@@ -252,7 +247,112 @@ Every bug forced us to make the pipeline more robust instead of patching individ
  |
 
 ---
+<div align="center">
 
+# 🛒 ACI
+## Agent Commerce Interface
+
+### **Making merchants AI-ready for autonomous shopping.**
+
+AI agents can browse.
+AI agents can reason.
+AI agents can plan.
+
+**But they still can't safely understand a merchant's website.**
+
+ACI is the trust layer that transforms merchant data into standardized, AI-readable commerce records.
+
+![Python](https://img.shields.io/badge/Python-3.11-blue?style=for-the-badge)
+![Streamlit](https://img.shields.io/badge/Streamlit-App-red?style=for-the-badge)
+![Razorpay](https://img.shields.io/badge/Razorpay-Test%20Mode-0066ff?style=for-the-badge)
+![Hackathon](https://img.shields.io/badge/Built%20For-Hackathon-purple?style=for-the-badge)
+
+</div>
+
+---
+
+---
+
+
+# 🚀 Getting Started
+
+## 1. Clone the Repository
+
+```bash
+git clone https://github.com/Nikitha-mk/ACI-AGENT_COMMERCE_INTERFACE.git
+```
+
+Move into the project directory
+
+```bash
+cd ACI-AGENT_COMMERCE_INTERFACE
+```
+
+---
+
+## 2. Create a Virtual Environment
+
+### Windows
+
+```bash
+python -m venv .venv
+```
+
+Activate
+
+```bash
+.venv\Scripts\activate
+```
+
+### macOS / Linux
+
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+```
+
+---
+
+## 3. Install Dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+---
+
+## 4. Run the Application
+
+```bash
+streamlit run app.py
+```
+
+Open
+
+```
+http://localhost:8501
+```
+
+---
+
+
+---
+
+---
+
+# 👩‍💻 Author
+
+**Nikitha MK**
+
+Built for a Hackathon 🚀
+
+---
+
+# 📜 License
+
+This project was created for educational and hackathon purposes.
+
+MIT License.
 # 🔮 Future Work
 
 - MCP Integration
