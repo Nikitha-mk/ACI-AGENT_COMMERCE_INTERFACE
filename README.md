@@ -266,11 +266,15 @@ Every bug forced us to make the pipeline more robust instead of patching individ
 
 | Landing       | AI Purchase   |
 | ------------- | ------------- |
-| _(add image)_ | _(add image)_ |
+| <img width="1033" height="871" alt="Screenshot 2026-09-04 211953" src="https://github.com/user-attachments/assets/fe86de23-73a6-4cde-afad-375c1f641086" />
+| <img width="1422" height="747" alt="Screenshot 2026-09-04 224325" src="https://github.com/user-attachments/assets/cbe8c8f8-d005-41d8-8d29-bd1dc5647f9b" />
+ |
 
 | Prompt Injection | Generated ACI |
 | ---------------- | ------------- |
-| _(add image)_    | _(add image)_ |
+| <img width="477" height="522" alt="Screenshot 2026-09-04 211022" src="https://github.com/user-attachments/assets/4cbce008-d9f7-47e2-94d9-9204ca45e695" />
+   | <img width="1032" height="881" alt="Screenshot 2026-09-04 211044" src="https://github.com/user-attachments/assets/8b54e3e6-d5db-41a8-aa08-f638ab09cb59" />
+ |
 
 ---
 
