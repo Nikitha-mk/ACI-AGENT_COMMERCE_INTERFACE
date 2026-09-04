@@ -1,90 +1,244 @@
-# ACI – Agent Commerce Interface
+<div align="center">
 
-## 🚀 Overview
+# 🛒 ACI
 
-ACI (Agent Commerce Interface) enables AI shopping agents to safely understand merchant catalogs by transforming raw merchant data into standardized AI-readable records.
+## Agent Commerce Interface
 
-Instead of allowing AI to directly consume inconsistent merchant pages, ACI parses, validates, normalizes, and scores merchant data before exposing it to an autonomous shopping agent.
+### **Making merchants AI-ready for autonomous shopping.**
+
+AI agents can browse the web.
+They can reason.
+They can plan.
+
+**But they still can't trust a merchant's product page.**
+
+ACI is the trust layer between merchants and AI agents.
 
 ---
 
-## ✨ Features
+![Python](https://img.shields.io/badge/Python-3.11-blue?style=for-the-badge)
+![Streamlit](https://img.shields.io/badge/Streamlit-Live-red?style=for-the-badge)
+![Razorpay](https://img.shields.io/badge/Razorpay-Test%20Mode-0066ff?style=for-the-badge)
+![Hackathon](https://img.shields.io/badge/Built%20For-Hackathon-purple?style=for-the-badge)
 
-- Merchant Catalog Parsing
-- AI Readiness Dashboard
+</div>
+
+---
+
+# 🤔 The Problem
+
+Today, merchant websites are built for **humans**.
+
+AI agents don't see
+
+- product pages
+- buy buttons
+- return policies
+
+the way we do.
+
+Instead they see messy HTML, inconsistent CSVs, ambiguous prices, different inventory formats and sometimes even malicious prompt injections.
+
+An autonomous shopping agent **cannot safely trust this information.**
+
+---
+
+# 💡 Our Solution
+
+ACI transforms messy merchant data into a **machine-readable commerce contract**.
+
+Instead of this...
+
+```
+Price : Rs. 599
+Available ✔
+Returns within 7 days*
+```
+
+the AI receives
+
+```json
+{
+  "price": {
+    "amount": 599,
+    "currency": "INR"
+  },
+  "stock": {
+    "status": "in_stock"
+  },
+  "return_policy": "7_days",
+  "readiness": 98
+}
+```
+
+One format.
+
+One schema.
+
+Every merchant.
+
+---
+
+# 🎬 Demo
+
+> **Merchant → ACI → AI Agent → Purchase**
+
+(Add GIF or Screenshot here)
+
+---
+
+# ✨ Features
+
+## 📦 Merchant Readiness Dashboard
+
+Every uploaded product receives
+
+- AI Readiness Score
+- Gap Detection
+- Prompt Injection Status
 - Merchant Confidence Score
-- Generated ACI Records
-- AI Autonomous Purchase
-- Prompt Injection Detection
-- Failure Simulations
-- Before vs After ACI Comparison
-- Developer Console
-- Parser Report
-- Audit Trail
-- Razorpay Test Payment Integration
 
 ---
 
-## 🏗️ Architecture
+## 🤖 AI Autonomous Purchase
 
-```
+The AI evaluates
 
-Merchant Catalog
-│
-▼
-Parser
-│
-▼
-Normalizer
-│
-▼
-Validator
-│
-▼
-Readiness Scoring
-│
-▼
-ACI v1 JSON
-│
-▼
-AI Purchase Agent
-│
-▼
-Deterministic Payment Gate
-│
-▼
-Audit Trail
+✅ Product
 
-```
+✅ Price
+
+✅ Inventory
+
+✅ Confidence
+
+before making a purchase.
 
 ---
 
-## 🛠️ Tech Stack
+## 🧾 Generated ACI Records
 
-- Python
-- Streamlit
-- Pandas
-- Razorpay
-- JSON
-- HTML/CSS
+Every merchant catalog becomes
+
+- structured
+- typed
+- standardized
+
+through **ACI v1 JSON**.
 
 ---
 
-## 📸 Demo Screens
+## 🛡 Prompt Injection Detection
 
-- Landing Page
-- Merchant Dashboard
-- AI Purchase
+Merchants cannot manipulate the AI.
+
+Hidden instructions are
+
+✔ detected
+
+✔ stripped
+
+✔ logged
+
+before reaching the shopping agent.
+
+---
+
+## ⚠ Failure Simulation
+
+Test scenarios include
+
+- Out of Stock
+- Budget Breach
 - Prompt Injection
-- Generated ACI
-- Failure Simulation
-- Audit Trail
+
+The AI never guesses.
+
+It explains every decision.
 
 ---
 
-## ▶️ Run
+## 🔍 Before vs After ACI
+
+See the exact difference between
+
+Raw Merchant Data
+
+↓
+
+Standardized ACI Record
+
+---
+
+## 💻 Developer Console
+
+Inspect
+
+- Readiness
+- Security
+- Validation
+- Audit Reference
+
+Everything remains explainable.
+
+---
+
+# 🏗 Architecture
+
+```
+Merchant Catalog
+        │
+        ▼
+      Parser
+        │
+        ▼
+   Normalizer
+        │
+        ▼
+    Validator
+        │
+        ▼
+ Readiness Score
+        │
+        ▼
+    ACI v1 JSON
+        │
+        ▼
+ AI Shopping Agent
+        │
+        ▼
+ Payment Gate
+(Budget • Stock • Consent)
+        │
+        ▼
+ Razorpay Test Order
+        │
+        ▼
+ Audit Trail
+```
+
+---
+
+# 🛠 Tech Stack
+
+| Layer    | Technology                 |
+| -------- | -------------------------- |
+| Frontend | Streamlit                  |
+| Backend  | Python                     |
+| Data     | Pandas                     |
+| Payments | Razorpay                   |
+| Security | Prompt Injection Detection |
+| Storage  | JSON                       |
+
+---
+
+# 🚀 Running Locally
 
 ```bash
+git clone https://github.com/Nikitha-mk/ACI-AGENT_COMMERCE_INTERFACE.git
+
+cd ACI-AGENT_COMMERCE_INTERFACE
+
 pip install -r requirements.txt
 
 streamlit run app.py
@@ -92,8 +246,48 @@ streamlit run app.py
 
 ---
 
-## 👩‍💻 Team
+# 🌙 What Broke at 2 AM?
 
-Nikitha MK
+Hackathons aren't real without bugs.
 
-Hackathon Project
+Things that actually broke while building ACI:
+
+- `KeyError: 'title'` because merchant catalogs had different schemas.
+- Streamlit crashed because the AI confidence returned a dictionary instead of a number.
+- Function signature mismatches after integrating failure simulations.
+- Duplicate Streamlit widget IDs.
+- Parser expected a CSV path but received a Python dictionary.
+
+Every bug forced us to make the pipeline more robust instead of patching individual screens.
+
+---
+
+# 📸 Screenshots
+
+| Landing       | AI Purchase   |
+| ------------- | ------------- |
+| _(add image)_ | _(add image)_ |
+
+| Prompt Injection | Generated ACI |
+| ---------------- | ------------- |
+| _(add image)_    | _(add image)_ |
+
+---
+
+# 🔮 Future Work
+
+- MCP Integration
+- Multi-Agent Commerce
+- Live Merchant APIs
+- Enterprise Dashboard
+- Agent-to-Agent Negotiation
+
+---
+
+<div align="center">
+
+## 🚀 Built with ❤️ for Hackathon
+
+### **"AI shopping needs trust before it needs intelligence."**
+
+</div>
